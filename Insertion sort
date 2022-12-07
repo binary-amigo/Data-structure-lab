@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+    int size;
+    cout<<"Enter size of array: ";
+    cin>>size;
+    int arr[size];
+    
+    
+    for(int i=0;i<size;++i)
+    {
+        cin>>arr[i];
+    }
+    cout<<"Before sorting:";
+    for(int j=0;j<size;++j)
+    {
+        cout<<arr[j]<<" ";
+    }
+    cout<<endl;
+    for(int i=size-1;i>=0;--i)
+    {
+        arr[i+1]=arr[i];
+    }
+    
+    arr[0]=-1;
+    
+    for(int k=1;k<size+1;++k)
+    {
+        int temp=arr[k];
+        int ptr=k-1;
+        while(temp<arr[ptr])
+        {
+            arr[ptr+1]=arr[ptr];
+            --ptr;
+        }
+        arr[++ptr]=temp;
+    }
+    
+    cout<<"After sorting: ";
+    for(int j=1;j<size+1;++j)
+    {
+        cout<<arr[j]<<" ";
+    }
+    cout<<endl;
+    cout<<endl<<"Suarin Rani";
+    return 0;
+}
